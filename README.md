@@ -25,4 +25,4 @@ Launches the test runner in the interactive watch mode.
 ### `npm run build`
 Builds the app for production to the `build` folder.
 
-See the complete [User Guide](USER-GUIDE.md) for mor info.
+This project was generate by `create-react-app` cli. See it's [User Guide](USER-GUIDE.md) for more info.
