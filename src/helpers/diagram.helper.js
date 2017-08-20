@@ -30,8 +30,10 @@ export default {
 
   deserializeModel(engine) {
     const model = new RJD.DiagramModel();
-    const json = JSON.parse(localStorage.getItem(storageKey));
-    if (json) model.deSerializeDiagram(json, engine);
+    const storagedModel = localStorage.getItem(storageKey);
+    if (storagedModel) {
+      model.deSerializeDiagram(JSON.parse(storagedModel), engine);
+    }
     return model;
   }
 }
