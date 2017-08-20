@@ -6,6 +6,8 @@ import DiagramHelper from './helpers/diagram.helper';
 import EngineHelper from './helpers/engine.helper';
 import Diagram from './components/Diagram/Diagram';
 import NodesPanel from './components/NodesPanel/NodesPanel';
+import Info from './components/Info/Info';
+import About from './components/About/About';
 import './RJD.css';
 import './App.css';
 
@@ -32,6 +34,8 @@ class App extends Component {
         <div className='app'>
           <NodesPanel />
           <Diagram engine={diagramEngine} model={diagramModel} updateModel={this.updateModel} />
+          <Info />
+          <About />
         </div>
       </DragDropContextProvider>
     );

@@ -1,0 +1,37 @@
+.about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 1em;
+  background: rgba(30, 30, 30, 0.95);
+  border: 2px solid rgb(30, 30, 30);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  transform: translate(-50%, -50%) scale(0.8);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 100ms ease, transform 100ms ease;
+  z-index: 20;
+  backface-visibility: hidden;
+}
+
+.about > h1 {
+  margin: 0;
+  font-weight: 200;
+}
+
+.about > h2 {
+  margin: 0 0 0.5em;
+  font-size: 1em;
+  letter-spacing: -0.05em;
+}
+
+.about > p {
+  margin: 0;
+  font-weight: 300;
+}
+
+.about > p > strong {
+  font-weight: 500;
+}

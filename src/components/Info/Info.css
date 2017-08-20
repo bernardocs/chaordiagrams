@@ -1,0 +1,26 @@
+.info {
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+  padding: 0.5em;
+  background: rgba(30, 30, 30, 0.8);
+  border-radius: 8px;
+  transition: opacity 100ms ease;
+}
+
+.info svg {
+  display: block;
+  width: 2em;
+  fill: #fff;
+  stroke: #fff;
+}
+
+.info:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.info:hover + .about {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
