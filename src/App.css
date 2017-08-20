@@ -1,22 +1,29 @@
 .app {
+  position: relative;
   flex: 1;
   display: flex;
-  flex-direction: row;
 }
 
 .app .nodes-panel {
-  flex: 0 0 8rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
   display: flex;
   flex-direction: column;
-  max-width: 10rem;
-  background: #787878;
-  border-right: 2px solid black;
   padding: 1rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 2px solid rgb(30, 30, 30);
+  border-radius: 8px;
+  z-index: 2;
 }
 
 .app .nodes-panel .node-wrapper {
   flex: 0 0 auto;
   margin-bottom: 1rem;
+}
+
+.app .nodes-panel .node-wrapper:last-child {
+  margin-bottom: 0;
 }
 
 .app .nodes-panel .node-wrapper .basic-node {
