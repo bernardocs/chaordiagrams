@@ -1,5 +1,6 @@
+import './NodesPanel.css';
 import React from 'react';
-import Node from './Node';
+import Node from '../Node/Node';
 
 export default class NodesPanel extends React.Component {
   render() {

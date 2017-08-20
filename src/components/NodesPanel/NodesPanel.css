@@ -1,0 +1,27 @@
+.nodes-panel {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 2px solid rgb(30, 30, 30);
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.nodes-panel .node-wrapper {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-bottom: 1rem;
+}
+
+.nodes-panel .node-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.nodes-panel .node-wrapper .basic-node {
+  width: 100px;
+}

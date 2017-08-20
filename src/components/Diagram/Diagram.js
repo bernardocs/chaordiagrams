@@ -2,11 +2,11 @@ import React from 'react';
 import * as RJD from 'react-js-diagrams';
 import _ from 'lodash';
 import { DropTarget } from 'react-dnd';
-import { OutputNodeModel } from '../nodes/output/OutputNodeModel';
-import { InputNodeModel } from '../nodes/input/InputNodeModel';
-import { ConnectionNodeModel } from '../nodes/connection/ConnectionNodeModel';
-import { ProcessNodeModel } from '../nodes/process/ProcessNodeModel';
-import { TerminatorNodeModel } from '../nodes/terminator/TerminatorNodeModel';
+import { OutputNodeModel } from '../../nodes/output/OutputNodeModel';
+import { InputNodeModel } from '../../nodes/input/InputNodeModel';
+import { ConnectionNodeModel } from '../../nodes/connection/ConnectionNodeModel';
+import { ProcessNodeModel } from '../../nodes/process/ProcessNodeModel';
+import { TerminatorNodeModel } from '../../nodes/terminator/TerminatorNodeModel';
 
 class Diagram extends React.Component {
   componentDidMount() {

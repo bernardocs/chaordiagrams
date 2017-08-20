@@ -4,8 +4,8 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import * as RJD from 'react-js-diagrams';
 import DiagramHelper from './helpers/diagram.helper';
 import EngineHelper from './helpers/engine.helper';
-import Diagram from './components/Diagram';
-import NodesPanel from './components/NodesPanel';
+import Diagram from './components/Diagram/Diagram';
+import NodesPanel from './components/NodesPanel/NodesPanel';
 import './RJD.css';
 import './App.css';
 

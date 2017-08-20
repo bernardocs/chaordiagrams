@@ -1,10 +1,11 @@
+import './Node.css'
 import React from 'react';
-import DragWrapper from './DragWrapper';
-import { OutputNodeWidget } from '../nodes/output/OutputNodeWidget';
-import { InputNodeWidget } from '../nodes/input/InputNodeWidget';
-import { ConnectionNodeWidget } from '../nodes/connection/ConnectionNodeWidget';
-import { ProcessNodeWidget } from '../nodes/process/ProcessNodeWidget';
-import { TerminatorNodeWidget } from '../nodes/terminator/TerminatorNodeWidget';
+import DragWrapper from '../DragWrapper/DragWrapper';
+import { OutputNodeWidget } from '../../nodes/output/OutputNodeWidget';
+import { InputNodeWidget } from '../../nodes/input/InputNodeWidget';
+import { ConnectionNodeWidget } from '../../nodes/connection/ConnectionNodeWidget';
+import { ProcessNodeWidget } from '../../nodes/process/ProcessNodeWidget';
+import { TerminatorNodeWidget } from '../../nodes/terminator/TerminatorNodeWidget';
 
 export default class Node extends React.Component {
   renderNode() {
