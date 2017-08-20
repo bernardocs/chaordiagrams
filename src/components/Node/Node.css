@@ -1,6 +1,6 @@
 .fluxogram-node {
   position: relative;
-  padding: 15px;
+  padding: 10px;
   font-size: 0.8em;
   color: #fff;
   border: 2px solid #000;
@@ -22,16 +22,24 @@
 
 .fluxogram-node .port {
   position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fluxogram-node .port:hover, 
+.fluxogram-node .port.selected {
+  background: #c0ff00;
 }
 
 .fluxogram-node .port.top,
 .fluxogram-node .port.bottom {
-  left: calc(50% - 7.5px);
+  left: calc(50% - 5px);
 }
 
 .fluxogram-node .port.right,
 .fluxogram-node .port.left {
-  top: calc(50% - 7.5px);
+  top: calc(50% - 5px);
 }
 
 .fluxogram-node .port.top {
@@ -52,14 +60,4 @@
 
 .fluxogram-node .port .name {
   display: none;
-}
-
-.port {
-  width: 15px;
-  height: 15px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.port:hover, .port.selected {
-  background: #c0ff00;
 }

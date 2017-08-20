@@ -7,8 +7,8 @@ export default class About extends React.Component {
         <div className='about'>
           <h1>ChaorDiagrams</h1>
           <h2>Simple and Neat chart drawer</h2>
-          <p>Try dragging those shapes into the canvas and connecting them by clicking on the little square by the shape's conner.</p>
-          <p>And don't worry... We save automatically every change you make! :)</p>
+          <p>Try <strong>dragging</strong> those shapes into the canvas and <strong>connecting</strong> them by clicking on the little square by the shape's conner.</p>
+          <p>And don't worry... We automatically <strong>save every change</strong> you make! :)</p>
         </div>
     )
   }

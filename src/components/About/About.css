@@ -22,13 +22,13 @@
 }
 
 .about > h2 {
-  margin: 0 0 0.5em;
+  margin: 0 0 1em;
   font-size: 1em;
   letter-spacing: -0.05em;
 }
 
 .about > p {
-  margin: 0;
+  margin: 0 0 0.5em;
   font-weight: 300;
 }
 
