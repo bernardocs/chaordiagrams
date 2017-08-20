@@ -1,6 +1,8 @@
 # ChaorDiagrams
 A simple and neat Diagram canvas
 
+[![Build Status](https://travis-ci.org/bernardocs/chaordiagrams.svg?branch=master)](https://travis-ci.org/bernardocs/chaordiagrams)
+
 ## Build Setup
 
 ``` bash
