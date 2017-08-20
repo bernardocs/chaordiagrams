@@ -1,5 +1,5 @@
 # ChaorDiagrams
-A simple and neat Diagrams Builder
+A simple and neat Diagram canvas
 
 ## Build Setup
 
