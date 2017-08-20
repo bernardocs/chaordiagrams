@@ -5,6 +5,7 @@ import { DropTarget } from 'react-dnd';
 import { OutputNodeModel } from '../nodes/output/OutputNodeModel';
 import { InputNodeModel } from '../nodes/input/InputNodeModel';
 import { ConnectionNodeModel } from '../nodes/connection/ConnectionNodeModel';
+import { ProcessNodeModel } from '../nodes/process/ProcessNodeModel';
 
 class Diagram extends React.Component {
   componentDidMount() {
@@ -65,6 +66,9 @@ const nodesTarget = {
     }
     if (item.type === 'connection') {
       node = new ConnectionNodeModel('Connection Node', item.color);
+    }
+    if (item.type === 'process') {
+      node = new ProcessNodeModel('Process', item.color);
     }
 
     node.x = x;

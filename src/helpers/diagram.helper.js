@@ -1,5 +1,4 @@
 import * as RJD from 'react-js-diagrams';
-import EngineHelper from './engine.helper'
 
 const storageKey = 'diagramModel';
 

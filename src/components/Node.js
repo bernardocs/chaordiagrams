@@ -3,6 +3,7 @@ import DragWrapper from './DragWrapper';
 import { OutputNodeWidget } from '../nodes/output/OutputNodeWidget';
 import { InputNodeWidget } from '../nodes/input/InputNodeWidget';
 import { ConnectionNodeWidget } from '../nodes/connection/ConnectionNodeWidget';
+import { ProcessNodeWidget } from '../nodes/process/ProcessNodeWidget';
 
 export default class Node extends React.Component {
   renderNode() {
@@ -16,6 +17,9 @@ export default class Node extends React.Component {
     }
     if (type === 'connection') {
       return <ConnectionNodeWidget node={{ name: 'Connection Node' }} color={color} displayOnly />;
+    }
+    if (type === 'process') {
+      return <ProcessNodeWidget node={{ name: 'Process' }} color={color} displayOnly />;
     }
     console.warn('Unknown node type');
     return null;

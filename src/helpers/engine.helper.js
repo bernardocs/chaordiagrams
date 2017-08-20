@@ -5,6 +5,8 @@ import { InputWidgetFactory } from '../nodes/input/InputWidgetFactory';
 import { InputNodeFactory } from '../nodes/input/InputInstanceFactories';
 import { ConnectionWidgetFactory } from '../nodes/connection/ConnectionWidgetFactory';
 import { ConnectionNodeFactory } from '../nodes/connection/ConnectionInstanceFactories';
+import { ProcessWidgetFactory } from '../nodes/process/ProcessWidgetFactory';
+import { ProcessNodeFactory } from '../nodes/process/ProcessInstanceFactories';
 
 export default {
   getNew() {
@@ -19,6 +21,7 @@ export default {
     engine.registerNodeFactory(new OutputWidgetFactory());
     engine.registerNodeFactory(new InputWidgetFactory());
     engine.registerNodeFactory(new ConnectionWidgetFactory());
+    engine.registerNodeFactory(new ProcessWidgetFactory());
 
     // Register instance factories
     engine.registerInstanceFactory(new RJD.DefaultNodeInstanceFactory());
@@ -27,5 +30,6 @@ export default {
     engine.registerInstanceFactory(new OutputNodeFactory());
     engine.registerInstanceFactory(new InputNodeFactory());
     engine.registerInstanceFactory(new ConnectionNodeFactory());
+    engine.registerInstanceFactory(new ProcessNodeFactory());
   }
 };

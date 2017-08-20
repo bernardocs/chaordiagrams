@@ -41,12 +41,6 @@
   background: #3c3c3c;
 }
 
-.app .controls {
-  flex: 0 0 20rem;
-  max-width: 20rem;
-  overflow: auto;
-}
-
 .port {
   width: 15px;
   height: 15px;
@@ -62,9 +56,9 @@
   border-radius: 5px;
   font-family: Arial;
   color: white;
-  border: solid 2px black;
   overflow: visible;
   font-size: 11px;
+  border: solid 2px black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .basic-node .title {
@@ -112,4 +106,50 @@
 .basic-node .ports .out-port .name {
   justify-content: flex-end;
   text-align: right;
+}
+
+.fluxogram-node {
+  position: relative;
+  padding: 15px;
+  color: #fff;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
+}
+
+
+.fluxogram-node .port {
+  position: absolute;
+}
+
+.fluxogram-node .port.top,
+.fluxogram-node .port.bottom {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fluxogram-node .port.right,
+.fluxogram-node .port.left {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fluxogram-node .port.top {
+  top: 0;
+}
+
+.fluxogram-node .port.right {
+  right: 0;
+}
+
+
+.fluxogram-node .port.bottom {
+  bottom: 0;
+}
+
+.fluxogram-node .port.left {
+  left: 0;
+}
+
+.fluxogram-node .port .name {
+  display: none;
 }
