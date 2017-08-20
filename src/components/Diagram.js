@@ -13,34 +13,26 @@ class Diagram extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (!_.isEqual(this.props.model, nextProps.model)) {
-      this.props.setModel(nextProps.model);
+      this.props.updateModel(nextProps.model);
     }
   }
 
   onChange(model, action) {
     // Ignore some events
-    if (['items-copied'].indexOf(action.type) !== -1) {
+    const ignoredEvents = [
+      'items-copied',
+      'canvas-click',
+      'canvas-drag',
+      'items-selected',
+      'items-drag-selected',
+      'node-selected',
+      'node-deselected',
+      'link-deselected'];
+    if (ignoredEvents.indexOf(action.type) !== -1) {
       return;
     }
 
-    // Check for single selected items
-    if (['node-selected', 'node-moved'].indexOf(action.type) !== -1) {
-      return this.selectedNode = action.model;
-    }
-
-    // Check for canvas events
-    const deselectEvts = ['canvas-click', 'canvas-drag', 'items-selected', 'items-drag-selected', 'items-moved'];
-    if (deselectEvts.indexOf(action.type) !== -1) {
-      return this.selectedNode = null;
-    }
-
-    // Check if this is a deselection and a single node exists
-    const isDeselect = ['node-deselected', 'link-deselected'].indexOf(action.type) !== -1;
-    if (isDeselect && action.items.length < 1 && action.model.nodeType) {
-      return this.selectedNode = action.model;
-    }
-
-    this.props.setModel(model);
+    this.props.updateModel(model);
   }
 
   render() {
@@ -80,7 +72,7 @@ const nodesTarget = {
     props.model.addNode(node);    
     
     // update model
-    props.setModel(props.model.serializeDiagram());
+    props.updateModel(props.model.serializeDiagram());
   },
 };
 

@@ -1,4 +1,5 @@
 import * as RJD from 'react-js-diagrams';
+import EngineHelper from './engine.helper'
 
 const storageKey = 'diagramModel';
 
@@ -23,18 +24,15 @@ export default {
     return link;
   },
 
-  serialize(engine, model) {
-    // We need this to help the system know what models to create form the JSON
-    engine.registerInstanceFactory(new RJD.DefaultNodeInstanceFactory());
-    engine.registerInstanceFactory(new RJD.DefaultPortInstanceFactory());
-    engine.registerInstanceFactory(new RJD.LinkInstanceFactory());
-
+  serializeModel(engine, model) {
+    // EngineHelper.setup(engine);
     localStorage.setItem(storageKey, JSON.stringify(model.serializeDiagram()));
   },
 
-  deserialize(engine) {
+  deserializeModel(engine) {
     const model = new RJD.DiagramModel();
-    model.deSerializeDiagram(JSON.parse(localStorage.getItem(storageKey)), engine);
-    engine.setDiagramModel(model);
+    const json = JSON.parse(localStorage.getItem(storageKey));
+    if (json) model.deSerializeDiagram(json, engine);
+    return model;
   }
 }
