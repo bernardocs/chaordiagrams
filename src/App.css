@@ -111,11 +111,24 @@
 .fluxogram-node {
   position: relative;
   padding: 15px;
+  font-size: 0.8em;
   color: #fff;
   border: 2px solid #000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.fluxogram-node.process {
+  color: #fff;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.fluxogram-node.terminator {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
 
 .fluxogram-node .port {
   position: absolute;
@@ -123,14 +136,12 @@
 
 .fluxogram-node .port.top,
 .fluxogram-node .port.bottom {
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 7.5px);
 }
 
 .fluxogram-node .port.right,
 .fluxogram-node .port.left {
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(50% - 7.5px);
 }
 
 .fluxogram-node .port.top {
@@ -140,7 +151,6 @@
 .fluxogram-node .port.right {
   right: 0;
 }
-
 
 .fluxogram-node .port.bottom {
   bottom: 0;

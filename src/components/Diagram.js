@@ -6,6 +6,7 @@ import { OutputNodeModel } from '../nodes/output/OutputNodeModel';
 import { InputNodeModel } from '../nodes/input/InputNodeModel';
 import { ConnectionNodeModel } from '../nodes/connection/ConnectionNodeModel';
 import { ProcessNodeModel } from '../nodes/process/ProcessNodeModel';
+import { TerminatorNodeModel } from '../nodes/terminator/TerminatorNodeModel';
 
 class Diagram extends React.Component {
   componentDidMount() {
@@ -69,6 +70,9 @@ const nodesTarget = {
     }
     if (item.type === 'process') {
       node = new ProcessNodeModel('Process', item.color);
+    }
+    if (item.type === 'terminator') {
+      node = new TerminatorNodeModel('Terminator', item.color);
     }
 
     node.x = x;

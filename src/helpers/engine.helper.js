@@ -7,6 +7,8 @@ import { ConnectionWidgetFactory } from '../nodes/connection/ConnectionWidgetFac
 import { ConnectionNodeFactory } from '../nodes/connection/ConnectionInstanceFactories';
 import { ProcessWidgetFactory } from '../nodes/process/ProcessWidgetFactory';
 import { ProcessNodeFactory } from '../nodes/process/ProcessInstanceFactories';
+import { TerminatorWidgetFactory } from '../nodes/terminator/TerminatorWidgetFactory';
+import { TerminatorNodeFactory } from '../nodes/terminator/TerminatorInstanceFactories';
 
 export default {
   getNew() {
@@ -22,6 +24,7 @@ export default {
     engine.registerNodeFactory(new InputWidgetFactory());
     engine.registerNodeFactory(new ConnectionWidgetFactory());
     engine.registerNodeFactory(new ProcessWidgetFactory());
+    engine.registerNodeFactory(new TerminatorWidgetFactory());
 
     // Register instance factories
     engine.registerInstanceFactory(new RJD.DefaultNodeInstanceFactory());
@@ -31,5 +34,6 @@ export default {
     engine.registerInstanceFactory(new InputNodeFactory());
     engine.registerInstanceFactory(new ConnectionNodeFactory());
     engine.registerInstanceFactory(new ProcessNodeFactory());
+    engine.registerInstanceFactory(new TerminatorNodeFactory());
   }
 };

@@ -4,6 +4,7 @@ import { OutputNodeWidget } from '../nodes/output/OutputNodeWidget';
 import { InputNodeWidget } from '../nodes/input/InputNodeWidget';
 import { ConnectionNodeWidget } from '../nodes/connection/ConnectionNodeWidget';
 import { ProcessNodeWidget } from '../nodes/process/ProcessNodeWidget';
+import { TerminatorNodeWidget } from '../nodes/terminator/TerminatorNodeWidget';
 
 export default class Node extends React.Component {
   renderNode() {
@@ -20,6 +21,9 @@ export default class Node extends React.Component {
     }
     if (type === 'process') {
       return <ProcessNodeWidget node={{ name: 'Process' }} color={color} displayOnly />;
+    }
+    if (type === 'terminator') {
+      return <TerminatorNodeWidget node={{ name: 'Terminator' }} color={color} displayOnly />;
     }
     console.warn('Unknown node type');
     return null;
