@@ -2,9 +2,6 @@ import React from 'react';
 import * as RJD from 'react-js-diagrams';
 import _ from 'lodash';
 import { DropTarget } from 'react-dnd';
-import { OutputNodeModel } from '../../nodes/output/OutputNodeModel';
-import { InputNodeModel } from '../../nodes/input/InputNodeModel';
-import { ConnectionNodeModel } from '../../nodes/connection/ConnectionNodeModel';
 import { ProcessNodeModel } from '../../nodes/process/ProcessNodeModel';
 import { TerminatorNodeModel } from '../../nodes/terminator/TerminatorNodeModel';
 
@@ -59,15 +56,6 @@ const nodesTarget = {
     const item = monitor.getItem();
 
     let node;
-    if (item.type === 'output') {
-      node = new OutputNodeModel('Output Node');
-    }
-    if (item.type === 'input') {
-      node = new InputNodeModel('Input Node');
-    }
-    if (item.type === 'connection') {
-      node = new ConnectionNodeModel('Connection Node', item.color);
-    }
     if (item.type === 'process') {
       node = new ProcessNodeModel('Process', item.color);
     }

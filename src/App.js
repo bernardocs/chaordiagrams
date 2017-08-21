@@ -11,19 +11,23 @@ import About from './components/About/About';
 import './RJD.css';
 import './App.css';
 
-const diagramEngine = EngineHelper.getNew();
-let diagramModel;
-
 class App extends Component {
+  constructor() {
+    super();
+    this.diagramEngine = EngineHelper.getNew();
+    this.diagramModel = undefined;
+  }
+
   updateModel(model) {
+    this.diagramEngine = EngineHelper.getNew();
     if (model) {
-      diagramModel = diagramModel || new RJD.DiagramModel();
-      diagramModel.deSerializeDiagram(model, diagramEngine);
+      this.diagramModel = this.diagramModel || new RJD.DiagramModel();
+      this.diagramModel.deSerializeDiagram(model, this.diagramEngine);
     } else {
-      diagramModel = DiagramHelper.deserializeModel(diagramEngine);
+      this.diagramModel = DiagramHelper.deserializeModel(this.diagramEngine);
     }
-    diagramEngine.setDiagramModel(diagramModel);
-    DiagramHelper.serializeModel(diagramEngine, diagramModel);
+    this.diagramEngine.setDiagramModel(this.diagramModel);
+    DiagramHelper.serializeModel(this.diagramEngine, this.diagramModel);
   }
 
   render() {
@@ -33,7 +37,7 @@ class App extends Component {
       <DragDropContextProvider backend={HTML5Backend}>
         <div className='app'>
           <NodesPanel />
-          <Diagram engine={diagramEngine} model={diagramModel} updateModel={this.updateModel} />
+          <Diagram engine={this.diagramEngine} model={this.diagramModel} updateModel={this.updateModel.bind(this)} />
           <Info />
           <About />
         </div>

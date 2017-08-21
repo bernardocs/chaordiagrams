@@ -1,9 +1,6 @@
 import './Node.css'
 import React from 'react';
 import DragWrapper from '../DragWrapper/DragWrapper';
-import { OutputNodeWidget } from '../../nodes/output/OutputNodeWidget';
-import { InputNodeWidget } from '../../nodes/input/InputNodeWidget';
-import { ConnectionNodeWidget } from '../../nodes/connection/ConnectionNodeWidget';
 import { ProcessNodeWidget } from '../../nodes/process/ProcessNodeWidget';
 import { TerminatorNodeWidget } from '../../nodes/terminator/TerminatorNodeWidget';
 
@@ -11,15 +8,6 @@ export default class Node extends React.Component {
   renderNode() {
     const { type, color } = this.props;
 
-    if (type === 'output') {
-      return <OutputNodeWidget node={{ name: 'Output Node' }} displayOnly />;
-    }
-    if (type === 'input') {
-      return <InputNodeWidget node={{ name: 'Input Node' }} displayOnly />;
-    }
-    if (type === 'connection') {
-      return <ConnectionNodeWidget node={{ name: 'Connection Node' }} color={color} displayOnly />;
-    }
     if (type === 'process') {
       return <ProcessNodeWidget node={{ name: 'Process' }} color={color} displayOnly />;
     }
