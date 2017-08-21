@@ -18,7 +18,8 @@ cache:
   directories:
   - node_modules
 script:
-  - npm test -- --coverage
+  - npm run build
+  - npm test -- --coverage > lcov.info
 
 after_success:
   - npm install -g codeclimate-test-reporter
