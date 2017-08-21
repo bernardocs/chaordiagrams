@@ -4,7 +4,6 @@ addons:
 
 env:
   global:
-    - CODECLIMATE_REPO_TOKEN=7942c01b7d5e3ec568327cd87f53d7ce4492c32893530340462063dc4a35033a
     - CC_TEST_REPORTER_ID=7942c01b7d5e3ec568327cd87f53d7ce4492c32893530340462063dc4a35033a
     - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
 
