@@ -4,16 +4,30 @@ import _ from 'lodash';
 import { DropTarget } from 'react-dnd';
 import { ProcessNodeModel } from '../../nodes/process/ProcessNodeModel';
 import { TerminatorNodeModel } from '../../nodes/terminator/TerminatorNodeModel';
+import DiagramHelper from '../../helpers/diagram.helper';
+import EngineHelper from '../../helpers/engine.helper';
+
+const diagramEngine = EngineHelper.getNew();
+let diagramModel = DiagramHelper.deserializeModel(diagramEngine);
 
 class Diagram extends React.Component {
   componentDidMount() {
-    this.selectedNode = null;
+    const { model } = this.props;
+    this.updateModel(model);
   }
 
   componentWillReceiveProps(nextProps) {
     if (!_.isEqual(this.props.model, nextProps.model)) {
-      this.props.updateModel(nextProps.model);
+      this.updateModel(nextProps.model);
     }
+  }
+
+  updateModel(model) {
+    if (model) {
+      diagramModel.deSerializeDiagram(model, diagramEngine);
+    }
+    diagramEngine.setDiagramModel(diagramModel);
+    DiagramHelper.serializeModel(diagramModel);
   }
 
   onChange(model, action) {
@@ -35,12 +49,12 @@ class Diagram extends React.Component {
   }
 
   render() {
-    const { engine, connectDropTarget } = this.props;
+    const { connectDropTarget } = this.props;
 
     // Render the canvas
     return connectDropTarget (
       <div className='diagram-drop-container'>
-        <RJD.DiagramWidget diagramEngine={engine} onChange={this.onChange.bind(this)} />
+        <RJD.DiagramWidget diagramEngine={diagramEngine} onChange={this.onChange.bind(this)} />
       </div>
     );
   }
@@ -49,8 +63,8 @@ class Diagram extends React.Component {
 const nodesTarget = {
   drop(props, monitor, component) {
     const { x: pageX, y: pageY } = monitor.getSourceClientOffset();
-    const { left = 0, top = 0 } = props.engine.canvas.getBoundingClientRect();
-    const { offsetX, offsetY } = props.engine.diagramModel;
+    const { left = 0, top = 0 } = diagramEngine.canvas.getBoundingClientRect();
+    const { offsetX, offsetY } = diagramEngine.diagramModel;
     const x = pageX - left - offsetX;
     const y = pageY - top - offsetY;
     const item = monitor.getItem();
@@ -65,10 +79,9 @@ const nodesTarget = {
 
     node.x = x;
     node.y = y;
-    props.model.addNode(node);    
-    
-    // update model
-    props.updateModel(props.model.serializeDiagram());
+    diagramModel.addNode(node);
+
+    props.updateModel(diagramModel.serializeDiagram());
   },
 };
 
