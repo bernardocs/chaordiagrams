@@ -72,6 +72,9 @@ export class TerminatorNodeWidget extends React.Component {
         <div className='port right'>{this.getRightPort()}</div>
         <div className='port bottom'>{this.getBottomPort()}</div>
         <div className='port left'>{this.getLeftPort()}</div>
+        <svg viewBox="0 0 350 100">
+          <rect x="0.5" y="0.5" width="350" height="100" rx="50" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd"></rect>
+        </svg>
         <div className='title'>
           <div className='name'>
             {name}
